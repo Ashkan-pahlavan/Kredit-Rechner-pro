@@ -18,11 +18,12 @@ def calculate():
         if [kredit, zahlung, zinse, monate].count(None) > 1:
             return render_template('result.html', error="Bitte mindestens drei Werte eingeben!")
 
-        # محاسبات
+        # نرخ سود ماهانه
         monatlicher_zinssatz = zinse / 100 / 12 if zinse else None
         fehlender_wert = None
         fehlender_wert_text = ""
 
+        # محاسبات
         if kredit is None:
             kredit = zahlung * monate / (1 + monatlicher_zinssatz * monate)
             fehlender_wert = kredit
@@ -45,18 +46,18 @@ def calculate():
         monatliche_zinszahlung = total_zinsen / monate
 
         # تبدیل مدت زمان به سال و ماه
-        jahre = monate // 12
-        rest_monate = monate % 12
+        jahre = int(monate // 12)  # فقط بخش صحیح سال‌ها
+        rest_monate = int(monate % 12)  # فقط بخش صحیح ماه‌ها
 
         return render_template(
             'result.html',
-            fehlender_wert=round(fehlender_wert, 2),
+            fehlender_wert=f"{fehlender_wert:.2f}",
             fehlender_wert_text=fehlender_wert_text,
             jahre=jahre,
             rest_monate=rest_monate,
-            total_zahlung=round(total_zahlung, 2),
-            total_zinsen=round(total_zinsen, 2),
-            monatliche_zinszahlung=round(monatliche_zinszahlung, 2),
+            total_zahlung=f"{total_zahlung:.2f}",
+            total_zinsen=f"{total_zinsen:.2f}",
+            monatliche_zinszahlung=f"{monatliche_zinszahlung:.2f}",
         )
     except ValueError:
         return render_template('result.html', error="Bitte gültige Zahlen eingeben!")
