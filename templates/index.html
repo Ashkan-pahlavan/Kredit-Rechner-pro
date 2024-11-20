@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Kredit Rechner</title>
+</head>
+<body>
+    <h1>Kredit Rechner</h1>
+    <form action="/calculate" method="post">
+        <label for="kredit">💵 Kreditsumme (€):</label>
+        <input type="number" step="0.01" name="kredit" id="kredit">
+
+        <label for="zahlung">📊 Monatliche Zahlung (€):</label>
+        <input type="number" step="0.01" name="zahlung" id="zahlung">
+
+        <label for="zinse">💸 Jährlicher Zinssatz (%):</label>
+        <input type="number" step="0.01" name="zinse" id="zinse">
+
+        <label for="monate">⏳ Anzahl der Monate:</label>
+        <input type="number" name="monate" id="monate">
+
+        <button type="submit">📈 Berechnen</button>
+    </form>
+</body>
+</html>

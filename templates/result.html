@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Ergebnis</title>
+</head>
+<body>
+    <h1>🌟 Ergebnis</h1>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% else %}
+        <p>🔍 {{ fehlender_wert_text }}: <strong>{{ fehlender_wert }}</strong></p>
+        <p>⏳ Laufzeit: <strong>{{ jahre }} Jahre und {{ rest_monate }} Monate</strong></p>
+        <p>💰 Gesamtbetrag der Zahlungen: <strong>{{ total_zahlung }} €</strong></p>
+        <p>💸 Gesamtbetrag der Zinsen: <strong>{{ total_zinsen }} €</strong></p>
+        <p>📈 Monatlicher Anteil der Zinszahlung: <strong>{{ monatliche_zinszahlung }} €</strong></p>
+    {% endif %}
+    <a href="/">🔙 Zurück</a>
+</body>
+</html>
