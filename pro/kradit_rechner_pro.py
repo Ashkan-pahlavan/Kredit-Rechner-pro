@@ -32,7 +32,6 @@ def zeige_ergebnis(title, fehlender_wert, fehlender_wert_text, monate, total_zah
     Label(ergebnis_fenster, text="💸 Gesamtbetrag der Zinsen:", bg="#2c3e50", fg="white", font=("Helvetica", 12)).pack()
     Label(ergebnis_fenster, text=f"{round(total_zinsen, 2)} €", bg="#2c3e50", fg="#e74c3c", font=("Helvetica", 14, "bold")).pack(pady=10)
 
-    # سهم ماهانه سود
     Label(ergebnis_fenster, text="📈 Monatlicher Anteil der Zinszahlung:", bg="#2c3e50", fg="white", font=("Helvetica", 12)).pack()
     Label(ergebnis_fenster, text=f"{round(monatliche_zinszahlung, 2)} €", bg="#2c3e50", fg="#f39c12", font=("Helvetica", 14, "bold")).pack(pady=10)
 

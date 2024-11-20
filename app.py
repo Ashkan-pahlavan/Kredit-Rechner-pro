@@ -45,7 +45,6 @@ def calculate():
         total_zinsen = total_zahlung - kredit
         monatliche_zinszahlung = total_zinsen / monate
 
-        # تبدیل مدت زمان به سال و ماه
         jahre = int(monate // 12)  # فقط بخش صحیح سال‌ها
         rest_monate = int(monate % 12)  # فقط بخش صحیح ماه‌ها
 
